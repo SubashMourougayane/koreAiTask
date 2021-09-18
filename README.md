@@ -23,11 +23,6 @@ npm install
 node index.js
 ```
 
-## Run tests
-
-```sh
-npm run test
-```
 
 ## Author
 
