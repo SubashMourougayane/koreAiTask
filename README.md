@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to KoreAi Captcha/Bitly 👋</h1>
+<h1 align="center">Welcome to KoreAi Captcha/Bitly 🤖</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <a href="https://documenter.getpostman.com/view/3379261/UUxtDpz4" target="_blank">
