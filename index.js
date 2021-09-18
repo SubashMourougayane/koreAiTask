@@ -3,8 +3,12 @@ const cluster = require('cluster');
 const cors = require('cors');
 const logger = require('morgan');
 const createError = require('http-errors');
+const bodyParser = require('body-parser')
+
 require('dotenv').config()
 
+const routerIndex = require('./src/routes')
+const GATEKEEPER = require('./src/gatekeeper/gatekeeper')
 
 
 const routeInit = (app) => {
@@ -19,6 +23,9 @@ const routeInit = (app) => {
         next();
     });
     app.use(logger('dev'));
+    app.use(bodyParser.urlencoded({ extended: false }))
+    app.use(bodyParser.json())
+
 
     app.get("/health", (req, res) => {
         GATEKEEPER.successDataResponse(res, {
@@ -30,6 +37,7 @@ const routeInit = (app) => {
     });
     app.use(cors());
 
+    app.use('/api/v1', routerIndex)
 
 
 
