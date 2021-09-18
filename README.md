@@ -16,24 +16,38 @@
 ```sh
 npm install
 ```
-
-## Usage
+## Test Server
 
 ```sh
-node index.js
+npm run test
 ```
 
+## Start Server
+
+```sh
+npm start
+```
+
+## Tail Logs
+
+```sh
+npm run logs
+```
+
+## Stop Server
+
+```sh
+npm run stop
+```
 
 ## Author
 
 👤 **Subash**
 
 * Github: [@SubashMourougayane](https://github.com/SubashMourougayane)
-* LinkedIn: [@Subash Mourougayane](https://linkedin.com/in/Subash Mourougayane)
+* LinkedIn: [@Subash Mourougayane](https://www.linkedin.com/in/subash-mourougayane-a224b1116/)
 
 ## Show your support
 
 Give a ⭐️ if this project helped you!
 
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_

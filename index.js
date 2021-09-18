@@ -1,12 +1,14 @@
 const express = require('express');
 const cluster = require('cluster');
 const cors = require('cors');
+const path = require('path');
+
 const logger = require('morgan');
 const createError = require('http-errors');
 const bodyParser = require('body-parser')
 
 require('dotenv').config()
-
+var server;
 const routerIndex = require('./src/routes')
 const GATEKEEPER = require('./src/gatekeeper/gatekeeper')
 
@@ -59,7 +61,9 @@ const routeInit = (app) => {
 
 
 const init = () => {
-    if (cluster.isMaster) {
+    var starter = process.argv[1].split(path.sep).pop();
+
+    if (cluster.isMaster && starter === 'index.js') {
         const numCPUs = require('os').cpus().length;
 
         for (let i = 0; i < numCPUs; i++) {
@@ -77,11 +81,15 @@ const init = () => {
 
 
       
-        app.listen(process.env.APP_PORT, () => console.log(" 💻 Server listening on port " + process.env.APP_PORT + " in " + process.env.APP_ENV + " mode version is " + require("./package.json").version));
+        server = app.listen(process.env.APP_PORT, () => console.log(" 💻 Server listening on port " + process.env.APP_PORT + " in " + process.env.APP_ENV + " mode version is " + require("./package.json").version));
 
 
         app.disable('x-powered-by');
+        
     }
+    
 };
 
 init();
+
+module.exports = server
