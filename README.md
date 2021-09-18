@@ -16,6 +16,13 @@
 ```sh
 npm install
 ```
+
+## Create .env file
+
+```sh
+copy the sample env file to .env file and add values to it
+```
+
 ## Test Server
 
 ```sh
