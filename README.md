@@ -37,6 +37,13 @@ copy the sample env file to .env file and add values to it
 npm run test
 ```
 
+
+## Import postman collection to test local
+
+```sh
+https://www.getpostman.com/collections/7c7f9fbd9d303344172a
+```
+
 ## Start Server
 
 ```sh
