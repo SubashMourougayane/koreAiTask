@@ -11,6 +11,14 @@
 
 > Task for KoreAi
 
+## Clone the project
+
+```sh
+git clone https://github.com/SubashMourougayane/koreAiTask.git
+
+cd koreAiTask
+```
+
 ## Install
 
 ```sh
