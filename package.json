@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test" : "mocha",
+    "test": "mocha",
     "start": "pm2 start index.js index",
     "logs": "pm2 logs index -f",
     "stop": "pm2 stop index"
@@ -18,6 +18,7 @@
     "chai": "^4.3.4",
     "chai-http": "^4.3.0",
     "cluster": "^0.7.7",
+    "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",

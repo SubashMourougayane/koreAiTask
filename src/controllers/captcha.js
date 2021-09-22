@@ -7,6 +7,7 @@ const captcha = (req, res, next) => {
     });
     
     res.type('svg');
+    res.cookie('captcha-value', captcha.text)
     res.status(200).send(captcha.data);
 
 }

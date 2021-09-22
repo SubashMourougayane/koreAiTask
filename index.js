@@ -6,6 +6,7 @@ const path = require('path');
 const logger = require('morgan');
 const createError = require('http-errors');
 const bodyParser = require('body-parser')
+const cookieParser = require('cookie-parser')
 
 require('dotenv').config()
 var server;
@@ -17,13 +18,7 @@ const routeInit = (app) => {
 
     // add all your middlewares here
    
-    app.use(function (request, response, next) {
-        response.header("Access-Control-Allow-Origin", "*");
-        response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, On-behalf-of, x-sg-elas-acl");
-        response.header("Access-Control-Allow-Credentials", true);
-        response.header("access-control-allow-methods", "*");
-        next();
-    });
+    app.use(cookieParser());
     app.use(logger('dev'));
     app.use(bodyParser.urlencoded({ extended: false }))
     app.use(bodyParser.json())
